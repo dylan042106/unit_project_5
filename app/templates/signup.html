@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href= "{% static "style.css"%}">
+    <title>Document</title>
+</head>
+<header>
+    <h1>EMAIL EXPRESS</h1>
+</header>
+<body>
+    <div class = "signup_box">
+        <form method = "POST" action= "">
+            {% csrf_token %}
+            <div class = "inp">
+                {{form.first_name.label}}
+                {{form.first_name}}
+            </div>
+
+            <div class = "inp">
+                {{form.last_name.label}}
+                {{form.last_name}}
+            </div>
+    
+            <div class "inp">
+                {{form.email.label}}
+                {{form.email}}
+            </div>
+            <div class "inp">
+                {{form.password1.label}}
+                {{form.password1}}
+            </div>
+            <div class "inp">
+                {{form.password2.label}}
+                {{form.password2}}
+            </div>
+    
+            <input class = "submit" type= "submit" name = "Create User">
+        </form>
+        {{form.errors}}
+</body>
+</html>
